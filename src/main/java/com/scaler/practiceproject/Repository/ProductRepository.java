@@ -3,6 +3,8 @@ package com.scaler.practiceproject.Repository;
 import com.scaler.practiceproject.Models.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
     //This will insert in my product table
@@ -13,5 +15,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
    //select * from Product where Description = description
     Product findByDescription(String description);
+
+    Product deleteProductById(Long id);
+
 
 }

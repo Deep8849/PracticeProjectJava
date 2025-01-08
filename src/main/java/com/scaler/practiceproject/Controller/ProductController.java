@@ -4,6 +4,7 @@ import com.scaler.practiceproject.DTO.errorDTO;
 import com.scaler.practiceproject.Exception.ProductNotFoundException;
 import com.scaler.practiceproject.Models.Product;
 import com.scaler.practiceproject.Service.ProductService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +24,7 @@ public class ProductController {
 
     private ProductService productService;
 
-    public ProductController(ProductService productService) {
+    public ProductController(@Qualifier("SelfProductService") ProductService productService) {
         this.productService = productService;
     }
 
@@ -33,6 +34,7 @@ public class ProductController {
     public Product CreateProduct(@RequestBody Product product) {
        Product p = productService.createProduct(product.getId(), product.getTitle(), product.getPrice(), product.getDescription(), product.getCategory().getName(), product.getImageUrl());
       return p;
+
     }
     //This will help in getting the product
 
@@ -45,7 +47,9 @@ public class ProductController {
 
     @GetMapping("/products")
     public List<Product> getAllProducts() {
-        return productService.getAllProduct();
+
+       return productService.getAllProduct();
+
     }
 
     //This will help in updating the product
@@ -60,7 +64,7 @@ public class ProductController {
     //This will help in deleting  the product
     @DeleteMapping("/product/{id}")
     public void DeleteProduct(@PathVariable("id") Long id ) {
-      productService.deleteProduct(id);
+     productService.deleteProduct(id);
         System.out.println("Product with ID " + id + " deleted.");
     }
 

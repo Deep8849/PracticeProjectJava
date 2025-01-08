@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-@Getter
-@Setter
+
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -16,5 +16,11 @@ public class Category extends BaseModel {
 
     private String name;
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 }

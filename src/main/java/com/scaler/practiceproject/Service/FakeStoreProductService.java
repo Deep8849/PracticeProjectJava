@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
+@Service("FakeStoreProductService")
 public class FakeStoreProductService implements ProductService {
     private  RestTemplate restTemplate;
 
@@ -63,20 +63,20 @@ public class FakeStoreProductService implements ProductService {
 
     @Override
     public Product updateProduct(Long id, Product updateproduct) {
-        System.out.println("update product with id: " + id);
-
-        FakeStoreProductDTO fakeStoreProductDTO = new FakeStoreProductDTO();
-        fakeStoreProductDTO.setId(id);
-        fakeStoreProductDTO.setTitle(updateproduct.getTitle());
-        fakeStoreProductDTO.setPrice(updateproduct.getPrice());
-        fakeStoreProductDTO.setDescription(updateproduct.getDescription());
-        fakeStoreProductDTO.setCategory(updateproduct.getCategory().getName());
-        fakeStoreProductDTO.setImage(updateproduct.getImageUrl());
-
-        restTemplate.put("https://fakestoreapi.com/products/" + id, fakeStoreProductDTO, FakeStoreProductDTO.class);
-
-        return fakeStoreProductDTO.getProduct();
-
+//        System.out.println("update product with id: " + id);
+//
+//        FakeStoreProductDTO fakeStoreProductDTO = new FakeStoreProductDTO();
+//        fakeStoreProductDTO.setId(id);
+//        fakeStoreProductDTO.setTitle(updateproduct.getTitle());
+//        fakeStoreProductDTO.setPrice(updateproduct.getPrice());
+//        fakeStoreProductDTO.setDescription(updateproduct.getDescription());
+//        fakeStoreProductDTO.setCategory(updateproduct.getCategory().getName());
+//        fakeStoreProductDTO.setImage(updateproduct.getImageUrl());
+//
+//        restTemplate.put("https://fakestoreapi.com/products/" + id, fakeStoreProductDTO, FakeStoreProductDTO.class);
+//
+//        return fakeStoreProductDTO.getProduct();
+         return null;
     }
 
     @Override

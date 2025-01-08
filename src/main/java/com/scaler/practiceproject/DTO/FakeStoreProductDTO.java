@@ -19,20 +19,20 @@ public class FakeStoreProductDTO {
     //from fakeStore
 
     public Product getProduct() {
-        Product product = new Product();
-        product.setId(id);
-        product.setTitle(title);
-        product.setPrice(price);
-        product.setDescription(description);
-        product.setImageUrl(image);
-
-        Category category = new Category();
-        category.setId(id);
-        category.setName(title);
-        product.setCategory(category);
-
-        return product;
-
+//        Product product = new Product();
+//        product.setId(id);
+//        product.setTitle(title);
+//        product.setPrice(price);
+//        product.setDescription(description);
+//        product.setImageUrl(image);
+//
+//        Category category = new Category();
+//        category.setId(id);
+//        category.setName(title);
+//        product.setCategory(category);
+//
+//        return product;
+  return null;
 
     }
 
